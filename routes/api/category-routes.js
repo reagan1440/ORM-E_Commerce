@@ -19,9 +19,34 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
+  try {
+    const dbCategoryData = await Category.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id',
+        'category_name'
+      ],
+      include: [
+        {
+          model: Product,
+          attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+        }
+      ]
+    });
+    if (!dbCategoryData) {
+      res.status(404).json({ message: 'Category not found' });
+      return;
+    }
+    res.json(dbCategoryData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: 'Failed to retrieve category data' });
+  }
 });
 
 router.post('/', (req, res) => {
