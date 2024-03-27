@@ -31,7 +31,7 @@ This project is licensed under the MIT license.
 For any questions, please contact [reagan1440](https://github.com/reagan1440) via email at reaganrl14@gmail.com.
 
 ## google drive link
-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/17216520-2ec6-4862-y292-1036fa8d3a8d
+https://drive.google.com/file/d/1-T8kGTlMWw4sUvb7xV8GPbmFgC4ylFL_/view
 
 ## repo
 https://github.com/reagan1440/ORM-E_Commerce
